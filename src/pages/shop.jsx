@@ -1,13 +1,14 @@
 import React from 'react'
+import NewLetter from '../components/NewLetter/NewLetter'
 
-
-const shop = () => {
+const Shop = () => {
   return (
-    <div  className='hero'>
-      
-      
+    <div className='hero'>
+      <NewLetter/>
+        
+
     </div>
   )
 }
 
-export default shop
+export default Shop

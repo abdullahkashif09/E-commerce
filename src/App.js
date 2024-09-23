@@ -1,13 +1,19 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'; 
 import Navbar from './components/Navbar/Navbar';
-import Hero from './components/Hero/Hero'; // Corrected import path
+import Hero from './components/Hero/Hero';
 import Popular from './components/Popular/Popular';
-import Shop from './pages/shop'
+import Offers from './components/Offers/Offers';
+import NewCollection from './components/NewCollection/NewCollection';
+import Shop from './pages/Shop';
 import ShopCategory from './pages/ShopCategory';
 import Product from './pages/Product';
 import Cart from './pages/Cart';
 import LoginSignup from './pages/LoginSignup';
+import men_banner from './components/Assets/banner_mens.png'
+import women_banner from './components/Assets/banner_women.png'
+import kid_banner from './components/Assets/banner_kids.png'
+
 
 const App = () => {
   return (
@@ -15,17 +21,20 @@ const App = () => {
       <BrowserRouter>
         <Navbar />
         <Hero />
-        <Popular/>
+        <Popular />
+        <Offers />
+        <NewCollection/>
         
+       
         
-        
+      
         
         <Routes>
-          <Route path='/shop' element={<Shop />} /> {/* Corrected Shop component name */}
-          <Route path='/mens' element={<ShopCategory category='mens' />} />
-          <Route path='/womens' element={<ShopCategory category='womens' />} />
-          <Route path='/kids' element={<ShopCategory category='kids' />} />
-          <Route path='/product/:productId' element={<Product />} /> {/* Merged productId into the product route */}
+          <Route path='/shop' element={<Shop />} />
+          <Route path='/mens' element={<ShopCategory banner={men_banner} category='mens' />} />
+          <Route path='/womens' element={<ShopCategory banner={women_banner} category='womens' />} />
+          <Route path='/kids' element={<ShopCategory  banner={kid_banner} category='kids' />} />
+          <Route path='/product/:productId' element={<Product />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/loginsignup' element={<LoginSignup />} />
         </Routes>
