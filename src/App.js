@@ -5,6 +5,9 @@ import Hero from './components/Hero/Hero';
 import Popular from './components/Popular/Popular';
 import Offers from './components/Offers/Offers';
 import NewCollection from './components/NewCollection/NewCollection';
+import NewLetter from './components/NewLetter/NewLetter'
+
+import Footer from './components/Footer/Footer';
 import Shop from './pages/Shop';
 import ShopCategory from './pages/ShopCategory';
 import Product from './pages/Product';
@@ -24,9 +27,7 @@ const App = () => {
         <Popular />
         <Offers />
         <NewCollection/>
-        
-       
-        
+        <NewLetter/>
       
         
         <Routes>
@@ -38,6 +39,7 @@ const App = () => {
           <Route path='/cart' element={<Cart />} />
           <Route path='/loginsignup' element={<LoginSignup />} />
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </div>
   );

@@ -3,7 +3,6 @@ import './Navbar.css';
 import logo from '../Assets/logo.png';
 import cart_icon from '../Assets/cart_icon.png'; 
 import { Link } from 'react-router-dom';
-
 const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState('');
 
@@ -15,7 +14,7 @@ const Navbar = () => {
       </div>
       <ul className="nav-menu">
         <li className={activeMenu === 'shop' ? 'active' : ''} onClick={() => setActiveMenu('shop')}>
-          <Link to='/'>Shop</Link>
+          <Link to='/Shop'>Shop</Link>
         </li>
         <li className={activeMenu === 'mens' ? 'active' : ''} onClick={() => setActiveMenu('mens')}>
           <Link to='/mens'>Mens</Link>

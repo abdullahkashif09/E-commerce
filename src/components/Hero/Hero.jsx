@@ -10,8 +10,6 @@ import hero_image from '../Assets/hero_image.png'
          <div>
             <div className="hand-hand-icon">
                <p>new</p>
-             
-              
             </div>
             <p>collection</p>
             <p>For everyone</p>
