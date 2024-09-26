@@ -7,7 +7,7 @@ const Item = (props) => {
     <div className='item'>
       {/* Use Link component for navigation */}
       <Link to={`/product/${props.id}`}>
-        <img src={props.image} alt={props.name} />
+        <img onClick={window.scrollTo(0,0)} src={props.image} alt={props.name} />
       </Link>
       <p>{props.name}</p>
       <div className="item-prices">
