@@ -6,8 +6,9 @@ import Popular from './components/Popular/Popular';
 import Offers from './components/Offers/Offers';
 import NewCollection from './components/NewCollection/NewCollection';
 import NewLetter from './components/NewLetter/NewLetter';
-import Footer from './components/Footer/Footer';
-import Shop from './pages/shop';
+
+import Footer from './components/Footer/Footer'
+import Shop from './pages/Shop'
 import ShopCategory from './pages/ShopCategory';
 import Product from './pages/Product';
 import Cart from './pages/Cart';
@@ -26,6 +27,7 @@ const App = () => {
         <Offers />
         <NewCollection />
         <NewLetter />
+        
         
         <Routes>
           <Route path='/shop' element={<Shop />} />
