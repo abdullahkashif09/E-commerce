@@ -1,47 +1,44 @@
 import React from 'react'
 import './Footer.css'
-import footer_logo from '../Assets/logo_big.png'
-import instagram_icon from '../Assets/instagram_icon.png'
-import pintester_icon from '../Assets/pintester_icon.png'
-import whatsapp_icon from '../Assets/whatsapp_icon.png'
+import footer_logo from '../Assets/logo.png'
+import { FaInstagram,FaWhatsapp,FaTwitter,FaYoutube } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
 
 const Footer = () => {
   return (
     <div className='footer'>
-        <div className='footer_logo'>
+        <div className="footer-logo">
             <img src={footer_logo} alt="" />
-            <p>SHOPPER</p>
-
+            <p>SHOPPIFY</p>
         </div>
-        <ul className='footer-links'>
-            <li>Company</li> 
+        <ul className="footer-links">
+            <li>Company</li>
+            <li>Products</li>
             <li>Offices</li>
-            <li>product</li>
-            <li>About</li>
             <li>Contact</li>
         </ul>
-        <div className='footer-social-icon'>
+        <hr/>
+        <div className="footer-social-icon">
             <div className="footer-icons-container">
-                <img src={instagram_icon} alt="" />
-
+                <Link to='https://www.instagram.com' style={{color:'black'}}><FaInstagram/></Link>
             </div>
             <div className="footer-icons-container">
-                <img src={pintester_icon} alt="" />
-
+                <FaWhatsapp />
             </div>
             <div className="footer-icons-container">
-                <img src={whatsapp_icon} alt="" />
-
+                <FaTwitter />
+            </div>
+            <div className="footer-icons-container">
+                <FaYoutube />
+            </div>
+            </div>
+            <div className="footer-copyright">
+                <hr/>
+                <p>Copyright @2023 -All Rights Reserved</p>
             </div>
         </div>
-        <div className="footer-copyright">
-            <hr/>
-            <p>Copyright @ 2023 - All Right Reserved</p>
-
-        </div>
-
-    </div>
   )
 }
 

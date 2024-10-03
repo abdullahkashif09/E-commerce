@@ -1,43 +1,44 @@
-import React, { useContext, useState } from 'react';
-import './Navbar.css';
+import React,{useContext, useState} from 'react';
+import './Navbar.css'
 import logo from '../Assets/logo.png';
-import cart_icon from '../Assets/cart_icon.png'; 
+import vart_icon from '../Assets/cart_icon.png'
 import { Link } from 'react-router-dom';
 import { ShopContext } from '../../Context/ShopContext';
-const Navbar = () => {
-  const [activeMenu, setActiveMenu] = useState('');
-  const {getTotalCartItems} = useContext(ShopContext)
+import { IoMenu } from "react-icons/io5";
+
+
+export const Navbar = () => {
+  const {getTotalCartItems}=useContext(ShopContext)
+  const [menu,setMenu]=useState("shop");
+  const handleMenuChange = (newMenu) => {
+    setMenu(newMenu);
+  };
+  const [isOpen, setIsOpen] = useState(false);
+
+
   return (
-    <div className='navbar'>
-      <div className='nav-logo'>
-        <img src={logo} alt='Shopper Logo' />
-        <p>Shopper</p>
+    <div className="navbar">
+      <div className="menu-icon" onClick={() => setIsOpen(!isOpen)}>
+        <IoMenu />
       </div>
-      <ul className="nav-menu">
-        <li className={activeMenu === 'shop' ? 'active' : ''} onClick={() => setActiveMenu('shop')}>
-          <Link to='/Shop'>Shop</Link>
-        </li>
-        <li className={activeMenu === 'mens' ? 'active' : ''} onClick={() => setActiveMenu('mens')}>
-          <Link to='/mens'>Mens</Link>
-        </li>
-        <li className={activeMenu === 'womens' ? 'active' : ''} onClick={() => setActiveMenu('womens')}>
-          <Link to='/womens'>Womens</Link>
-        </li>
-        <li className={activeMenu === 'kids' ? 'active' : ''} onClick={() => setActiveMenu('kids')}>
-          <Link to='/kids'>Kids</Link>
-        </li>
+      <div className="nav-logo">
+        <Link to='/'><img src={logo} alt="" to='/' /></Link>
+        <p className="shoppify-text">SHOPPIFY</p>
+      </div>
+      <ul className={`nav-menu ${isOpen ? 'open' : ''}`}>
+        <li onClick={()=>{handleMenuChange('shop')}}><Link to='/' style={{textDecoration:'none', color: 'black'}}>Shop</Link>{ menu==="shop"?<hr/>:<></>}</li>
+        <li onClick={()=>{handleMenuChange('mens')}}><Link to='/mens'style={{textDecoration:'none',color: 'black'}}>Men</Link>{ menu==="mens"?<hr/>:<></>} </li>
+        <li onClick={()=>{handleMenuChange('womens')}}><Link to='/womens' style={{textDecoration:'none',color: 'black'}}>Women</Link>{ menu==="womens"?<hr/>:<></>} </li>
+        <li onClick={()=>{handleMenuChange('kids')}}><Link to='/kids' style={{textDecoration:'none',color: 'black'}}>Kids</Link>{ menu==="kids"?<hr/>:<></>} </li>
+        <li className='login'><Link to='/login'><button onCanPlay={window.scrollTo(0,0)}>Login </button></Link></li>
       </ul>
-      <div className='nav-login-cart'>
-        <Link to='/login'>
-          <button>Login</button>
-        </Link>
-        <Link to='/cart'>
-          <img src={cart_icon} alt="Shopping Cart Icon" />
-        </Link>
-        <div className='nav-cart-count'>{getTotalCartItems}</div>
+      <div className="nav-login-cart">
+        {/* <Link to='/login'><button onCanPlay={window.scrollTo(0,0)}>Login </button></Link> */}
+        <Link to='/cart'><img src={vart_icon} alt="" /></Link>
+        <div className="nav-cart-count">{getTotalCartItems()}</div>
       </div>
     </div>
-  );
+    
+  )
 }
-
-export default Navbar;
+export default Navbar

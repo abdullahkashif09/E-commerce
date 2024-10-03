@@ -1,9 +1,13 @@
 .item{
-    width: 350px;
-    
+    width: 280px;
+    cursor: pointer;
+}
+.item img{
+   width: 80%
 }
 .item p{
-    margin: 6px 0px;
+    margin: 6px 1px;
+    width: 240px;
 }
 .item-prices{
     display: flex;
@@ -15,13 +19,12 @@
     font-weight: 600;
 }
 .item-price-old{
-    color: #8c8c8c;
+    color: #767777;
     font-size: 18px;
     font-weight: 500;
     text-decoration: line-through;
-
 }
 .item:hover{
     transform: scale(1.05);
-    transition: 0.6s;
+    transition: 0.5s;
 }

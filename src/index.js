@@ -7,9 +7,9 @@ import ShopContextProvider from './Context/ShopContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <ShopContextProvider>
+    <ShopContextProvider>
     <App />
-  </ShopContextProvider>
+    </ShopContextProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
